@@ -1,0 +1,51 @@
+<div class="main-container">
+   <div class="header">
+     <h1>Create Account</h1>
+     <p id="sub-header">Please complete the fields below to access the app.</p>
+   </div>
+ 
+   <div class="inner-part">
+     <label class="labels" for="username">Username</label>
+     <input class="textBoxes" type="text" placeholder="Example@Email.com" [(ngModel)]="username" name="username" required #usernameInput="ngModel">
+     <div *ngIf="usernameInput.invalid && usernameInput.touched" class="errorMessage">Username is required.</div>
+     <label for="" class="labels">Select Title </label>
+     <select name="selection" class="textBoxes" [(ngModel)]="selectedOption" (ngModelChange)="updateLabel()">
+      <option value="Supplier">Supplier</option>
+      <option value="Trader">Trader</option>
+    </select>
+    
+    <label class="labels" for="supplierID" *ngFor="let option of selectedOptionArray">{{ option }}</label>
+    
+     <input class="textBoxes" type="text" [(ngModel)]="supplierID" name="supplierID" required #supplierIDInput="ngModel">
+     <div *ngIf="supplierIDInput.invalid && supplierIDInput.touched" class="errorMessage"> ID is required.</div>
+ 
+     <label class="labels" for="contactNumber">Contact Number</label>
+     <input class="textBoxes" type="text" [(ngModel)]="contactNumber" name="contactNumber" required #contactNumberInput="ngModel">
+     <div *ngIf="contactNumberInput.invalid && contactNumberInput.touched" class="errorMessage">Contact Number is required.</div>
+    
+     <label class="labels" for="officeNumber">Office Number</label>
+     <input class="textBoxes" type="text" [(ngModel)]="officeNumber" name="officeNumber" required #officeNumberInput="ngModel">
+     <div *ngIf="officeNumberInput.invalid && officeNumberInput.touched" class="errorMessage">Office Number is required.</div>
+
+     <label class="labels" for="contactNumber">Office Address</label>
+     <input class="textBoxes" type="text" [(ngModel)]="officeAddress" name="officeAddress" required #officeAddressInput="ngModel">
+     <div *ngIf="officeAddressInput.invalid && officeAddressInput.touched" class="errorMessage">Office Address is required.</div>
+
+     <label class="labels" for="password">Password</label>
+     <input class="textBoxes" type="password" [(ngModel)]="password" name="password" required #passwordInput="ngModel">
+     <div *ngIf="passwordInput.invalid && passwordInput.touched" class="errorMessage">Password is required.</div>
+ 
+     <label class="labels" for="confirmPassword">Confirm Password</label>
+     <input class="textBoxes" type="password" [(ngModel)]="confirmPassword" name="confirmPassword" required #confirmPasswordInput="ngModel">
+     <div *ngIf="confirmPasswordInput.invalid && confirmPasswordInput.touched && confirmPassword !== password" class="errorMessage">Passwords do not match.</div>
+ 
+     <span class="TandT">
+       <label class="labels" for="acceptTerms">Accept terms & Conditions</label>
+       <input type="checkbox" [(ngModel)]="acceptTerms" name="acceptTerms" required #acceptTermsInput="ngModel">
+     </span>
+     <div *ngIf="acceptTermsInput.invalid && acceptTermsInput.touched" class="errorMessage">You must accept the terms & conditions.</div>
+ 
+     <button id="btnCreate" (click)="createAccount()">Create Account</button>
+   </div>
+ </div>
+ 

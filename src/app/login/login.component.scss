@@ -1,0 +1,81 @@
+.main-container,
+.inner-part,
+.header,
+.TandT,
+.bottom-part
+{
+    display: flex;
+  
+     background-color: #E6E6E6;
+}
+.main-container,
+.inner-part,
+.header
+{
+    flex-direction: column;
+}
+.main-container{
+    height: 100vh;
+    width: 100vw;
+    
+   
+}
+.header{
+    height: 20%;
+    width: 100vw;
+    gap: 18%;
+    color: #000;
+align-items: center;
+margin-top: 5%;
+  
+}
+h1{
+    font-size: 100%;
+    font-weight:bold;
+}
+.inner-part{
+    gap: 3%;
+    height: 70%;
+   
+  
+}
+.bottom-part{
+    align-self: center;
+}
+.textBoxes{
+    width: 70%;
+    align-self: center;
+    height: 6%;
+  
+}
+.TandT{
+    gap: 3%;
+    
+}
+.labels{
+   margin-left: 17%; 
+}
+input{
+    border-radius: 5px;
+    border-color: #fff;
+    background-color: #ffff;
+    border: none;
+}
+#btnCreate{
+width: 20%;
+align-self: center;
+height: 6%;
+width: 70%;
+color: #fff;
+background-color: #0D99FF;
+border: none;
+border-radius: 3px;
+}
+.errorMessage {
+    font-size: 12px; 
+    color: red;
+  }
+  .errorMessage{
+    margin-left: 17%; 
+
+  }
