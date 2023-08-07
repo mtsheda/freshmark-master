@@ -1,0 +1,31 @@
+<div class="main-container">
+   <div class="header">
+     <h1>Hi there! Welcome to</h1>
+     <h1 id="sub-header">Ekurhuleni Fresh Produced Market</h1>
+   </div>
+ 
+   <div class="inner-part">
+     <label class="labels" for="username">Username</label>
+     <input class="textBoxes" type="text" placeholder="   Example@Email.com" [(ngModel)]="username" name="username" required #usernameInput="ngModel">
+     <div *ngIf="usernameInput.invalid && usernameInput.touched" class="errorMessage">Username is required.</div>
+ 
+     <label class="labels" for="password">Password</label>
+     <input class="textBoxes" type="password" [(ngModel)]="password" name="password" required #passwordInput="ngModel">
+     <div *ngIf="passwordInput.invalid && passwordInput.touched" class="errorMessage">Password is required.</div>
+ 
+     <button id="btnCreate" (click)="signIn()">Sign in</button>
+     <br>
+ 
+     <span class="TandT">
+       <label class="labels" for="">Forgot Password?</label>
+       <a routerLink="/login/passwordRecovery">Reset Password</a>
+     </span>
+     <br>
+     &ensp; &ensp;
+     <span class="TandT">
+       <label class="labels" for="">Create a user account.</label>
+       <a routerLink="">Sign up</a>
+     </span>
+   </div>
+ </div>
+ 
